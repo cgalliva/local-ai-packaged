@@ -184,9 +184,8 @@ to get started.
 1. Open <http://localhost:5679/> in your browser to set up n8n. You'll only
    have to do this once. You are NOT creating an account with n8n in the setup here,
    it is only a local account for your instance!
-2. Open the included workflow:
-   <http://localhost:5679/workflow/vTN9y2dLXqTiDfPT>
-3. Create credentials for every service:
+2. Create your workflows or import the exported workflow from `n8n/backup/workflows/`
+3. Create credentials for services you need (see setup instructions below):
    
    Ollama URL: http://host.docker.internal:11434 (uses your native Ollama installation)
 
@@ -196,22 +195,15 @@ to get started.
    Google Drive: Follow [this guide from n8n](https://docs.n8n.io/integrations/builtin/credentials/google/).
    Don't use localhost for the redirect URI, just use another domain you have, it will still work!
    Alternatively, you can set up [local file triggers](https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.localfiletrigger/).
-4. Select **Test workflow** to start running the workflow.
-5. If this is the first time you’re running the workflow, you may need to wait
-   until Ollama finishes downloading Llama3.1. You can inspect the docker
-   console logs to check on the progress.
-6. Make sure to toggle the workflow as active and copy the "Production" webhook URL!
-7. Open <http://localhost:8082/> in your browser to set up Open WebUI.
+4. Open <http://localhost:8082/> in your browser to set up Open WebUI.
 You'll only have to do this once. You are NOT creating an account with Open WebUI in the 
 setup here, it is only a local account for your instance!
-8. Go to Workspace -> Functions -> Add Function -> Give name + description then paste in
-the code from `n8n_pipe.py`
-
-   The function is also [published here on Open WebUI's site](https://openwebui.com/f/coleam/n8n_pipe/).
-
-9. Click on the gear icon and set the n8n_url to the production URL for the webhook
-you copied in a previous step.
-10. Toggle the function on and now it will be available in your model dropdown in the top left! 
+5. (Optional) To connect Open WebUI to n8n workflows:
+   - Go to Workspace → Functions → Add Function
+   - Give it a name + description, then paste code from `n8n_pipe.py`
+   - The function is also [published here on Open WebUI's site](https://openwebui.com/f/coleam/n8n_pipe/)
+   - Click the gear icon and set the `n8n_url` to your n8n webhook production URL
+   - Toggle the function on - it will now be available in your model dropdown! 
 
 To open n8n at any time, visit <http://localhost:5679/> in your browser.
 To open Open WebUI at any time, visit <http://localhost:8082/>.
