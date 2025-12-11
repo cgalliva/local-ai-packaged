@@ -1,75 +1,52 @@
-# Self-hosted AI Package - For Source Code AI - branch
+# SC AI Demo - Simplified Local AI Stack
 
-**Self-hosted AI Package** is an open, docker compose template that
-quickly bootstraps a fully featured Local AI and Low Code development
-environment including Ollama for your local LLMs, Open WebUI for an interface to chat with your N8N agents, and Supabase for your database, vector store, and authentication. 
+**SC AI Demo** is a streamlined, docker compose setup for a fully featured Local AI development environment. This configuration uses **native Ollama** running on your host machine, with **Open WebUI** as the chat interface, **n8n** for AI workflow automation, and **Supabase** for your database and vector store.
 
-This is Cole's version with a couple of improvements and the addition of Supabase, Open WebUI, Flowise, Neo4j, Langfuse, SearXNG, and Caddy!
-Also, the local RAG AI Agent workflows from the video will be automatically in your 
-n8n instance if you use this setup instead of the base one provided by n8n!
+This simplified stack focuses on the core components needed for an AI chat demo with RAG capabilities and web search.
 
-**IMPORANT**: Supabase has updated a couple environment variables so you may have to add some new default values in your .env that I have in my .env.example if you have had this project up and running already and are just pulling new changes. Specifically, you need to add "POOLER_DB_POOL_SIZE=5" to your .env. This is required if you have had the package running before June 14th.
+## What's included
 
-## Important Links
+✅ [**Open WebUI**](https://openwebui.com/) - ChatGPT-like interface to privately interact with your local models and n8n agents
 
-- [Local AI community](https://thinktank.ottomator.ai/c/local-ai/18) forum over in the oTTomator Think Tank
+✅ [**n8n**](https://n8n.io/) - Low-code platform with over 400 integrations and advanced AI components
 
-- [GitHub Kanban board](https://github.com/users/coleam00/projects/2/views/1) for feature implementation and bug squashing.
+✅ [**Supabase**](https://supabase.com/) - Open source database with built-in vector storage (pgvector) for RAG
 
-- [Original Local AI Starter Kit](https://github.com/n8n-io/self-hosted-ai-starter-kit) by the n8n team
+✅ [**Native Ollama**](https://ollama.com/) - Running on host machine for optimal performance with Apple Silicon/GPU
 
-- Download my N8N + OpenWebUI integration [directly on the Open WebUI site.](https://openwebui.com/f/coleam/n8n_pipe/) (more instructions below)
+✅ [**Neo4j**](https://neo4j.com/) - Knowledge graph engine (optional, for advanced GraphRAG)
 
-![n8n.io - Screenshot](https://raw.githubusercontent.com/n8n-io/self-hosted-ai-starter-kit/main/assets/n8n-demo.gif)
-
-Curated by <https://github.com/n8n-io> and <https://github.com/coleam00>, it combines the self-hosted n8n
-platform with a curated list of compatible AI products and components to
-quickly get started with building self-hosted AI workflows.
-
-### What’s included
-
-✅ [**Self-hosted n8n**](https://n8n.io/) - Low-code platform with over 400
-integrations and advanced AI components
-
-✅ [**Supabase**](https://supabase.com/) - Open source database as a service -
-most widely used database for AI agents
-
-✅ [**Ollama**](https://ollama.com/) - Cross-platform LLM platform to install
-and run the latest local LLMs
-
-✅ [**Open WebUI**](https://openwebui.com/) - ChatGPT-like interface to
-privately interact with your local models and N8N agents
-
-✅ [**Flowise**](https://flowiseai.com/) - No/low code AI agent
-builder that pairs very well with n8n
-
-✅ [**Qdrant**](https://qdrant.tech/) - Open source, high performance vector
-store with an comprehensive API. Even though you can use Supabase for RAG, this was
-kept unlike Postgres since it's faster than Supabase so sometimes is the better option.
-
-✅ [**Neo4j**](https://neo4j.com/) - Knowledge graph engine that powers tools like GraphRAG, LightRAG, and Graphiti 
-
-✅ [**SearXNG**](https://searxng.org/) - Open source, free internet metasearch engine which aggregates 
-results from up to 229 search services. Users are neither tracked nor profiled, hence the fit with the local AI package.
+✅ [**Langfuse**](https://langfuse.com/) - Open source LLM engineering platform (optional, for observability)
 
 ✅ [**Caddy**](https://caddyserver.com/) - Managed HTTPS/TLS for custom domains
-
-✅ [**Langfuse**](https://langfuse.com/) - Open source LLM engineering platform for agent observability
 
 ## Prerequisites
 
 Before you begin, make sure you have the following software installed:
 
 - [Python](https://www.python.org/downloads/) - Required to run the setup script
-- [Git/GitHub Desktop](https://desktop.github.com/) - For easy repository management
+- [Git/GitHub Desktop](https://desktop.github.com/) - For repository management
 - [Docker/Docker Desktop](https://www.docker.com/products/docker-desktop/) - Required to run all services
+- [Ollama](https://ollama.com/) - **Install natively on your host machine** (not in Docker)
+
+### Installing Native Ollama
+
+This setup uses Ollama running natively on your host machine for better performance:
+
+1. Download and install Ollama from [ollama.com](https://ollama.com/)
+2. Verify it's running: `ollama --version`
+3. Pull the required models:
+   ```bash
+   ollama pull qwen2.5:7b-instruct-q4_K_M
+   ollama pull nomic-embed-text
+   ```
 
 ## Installation
 
 Clone the repository and navigate to the project directory:
 ```bash
-git clone -b stable https://github.com/coleam00/local-ai-packaged.git
-cd local-ai-packaged
+git clone https://github.com/yourusername/sc-ai-demo.git
+cd sc-ai-demo
 ```
 
 Before running the services, you need to set up your environment variables for Supabase following their [self-hosting guide](https://supabase.com/docs/guides/self-hosting/docker#securing-your-services).
@@ -121,73 +98,27 @@ Before running the services, you need to set up your environment variables for S
 
    N8N_HOSTNAME=n8n.yourdomain.com
    WEBUI_HOSTNAME=:openwebui.yourdomain.com
-   FLOWISE_HOSTNAME=:flowise.yourdomain.com
    SUPABASE_HOSTNAME=:supabase.yourdomain.com
    OLLAMA_HOSTNAME=:ollama.yourdomain.com
-   SEARXNG_HOSTNAME=searxng.yourdomain.com
    NEO4J_HOSTNAME=neo4j.yourdomain.com
    LETSENCRYPT_EMAIL=your-email-address
    ```   
 
 ---
 
-The project includes a `start_services.py` script that handles starting both the Supabase and local AI services. The script accepts a `--profile` flag to specify which GPU configuration to use.
+The project includes a `start_services.py` script that handles starting both the Supabase and local AI services.
 
-### For Nvidia GPU users
+**Important**: This setup uses **native Ollama on your host**, not containerized Ollama. Make sure Ollama is installed and running on your machine before starting the services.
 
-```bash
-python start_services.py --profile gpu-nvidia
-```
+### Starting the Services
 
-> [!NOTE]
-> If you have not used your Nvidia GPU with Docker before, please follow the
-> [Ollama Docker instructions](https://github.com/ollama/ollama/blob/main/docs/docker.md).
-
-### For AMD GPU users on Linux
+Since you're using native Ollama on your host machine, run:
 
 ```bash
-python start_services.py --profile gpu-amd
+python start_services.py --profile none
 ```
 
-### For Mac / Apple Silicon users
-
-If you're using a Mac with an M1 or newer processor, you can't expose your GPU to the Docker instance, unfortunately. There are two options in this case:
-
-1. Run the starter kit fully on CPU:
-   ```bash
-   python start_services.py --profile cpu
-   ```
-
-2. Run Ollama on your Mac for faster inference, and connect to that from the n8n instance:
-   ```bash
-   python start_services.py --profile none
-   ```
-
-   If you want to run Ollama on your mac, check the [Ollama homepage](https://ollama.com/) for installation instructions.
-
-#### For Mac users running OLLAMA locally
-
-If you're running OLLAMA locally on your Mac (not in Docker), you need to modify the OLLAMA_HOST environment variable in the n8n service configuration. Update the x-n8n section in your Docker Compose file as follows:
-
-```yaml
-x-n8n: &service-n8n
-  # ... other configurations ...
-  environment:
-    # ... other environment variables ...
-    - OLLAMA_HOST=host.docker.internal:11434
-```
-
-Additionally, after you see "Editor is now accessible via: http://localhost:5678/":
-
-1. Head to http://localhost:5678/home/credentials
-2. Click on "Local Ollama service"
-3. Change the base URL to "http://host.docker.internal:11434/"
-
-### For everyone else
-
-```bash
-python start_services.py --profile cpu
-```
+The `--profile none` option tells the script not to start any containerized Ollama instance, as you're using the native one on your host.
 
 ### The environment argument
 The **start-services.py** script offers the possibility to pass one of two options for the environment argument, **private** (default environment) and **public**:
@@ -257,12 +188,10 @@ to get started.
    <http://localhost:5678/workflow/vTN9y2dLXqTiDfPT>
 3. Create credentials for every service:
    
-   Ollama URL: http://ollama:11434
+   Ollama URL: http://host.docker.internal:11434 (uses your native Ollama installation)
 
    Postgres (through Supabase): use DB, username, and password from .env. IMPORTANT: Host is 'db'
    Since that is the name of the service running Supabase
-
-   Qdrant URL: http://qdrant:6333 (API key can be whatever since this is running locally)
 
    Google Drive: Follow [this guide from n8n](https://docs.n8n.io/integrations/builtin/credentials/google/).
    Don't use localhost for the redirect URI, just use another domain you have, it will still work!
@@ -287,13 +216,13 @@ you copied in a previous step.
 To open n8n at any time, visit <http://localhost:5678/> in your browser.
 To open Open WebUI at any time, visit <http://localhost:3000/>.
 
-With your n8n instance, you’ll have access to over 400 integrations and a
+With your n8n instance, you'll have access to over 400 integrations and a
 suite of basic and advanced AI nodes such as
 [AI Agent](https://docs.n8n.io/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.agent/),
 [Text classifier](https://docs.n8n.io/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.text-classifier/),
 and [Information Extractor](https://docs.n8n.io/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.information-extractor/)
-nodes. To keep everything local, just remember to use the Ollama node for your
-language model and Qdrant as your vector store.
+nodes. To keep everything local, just remember to use the Ollama credentials pointing to host.docker.internal:11434 for your
+language model and Supabase's pgvector as your vector store.
 
 > [!NOTE]
 > This starter kit is designed to help you get started with self-hosted AI
@@ -307,18 +236,48 @@ To update all containers to their latest versions (n8n, Open WebUI, etc.), run t
 
 ```bash
 # Stop all services
-docker compose -p localai -f docker-compose.yml --profile <your-profile> down
+docker compose -p sc-ai -f docker-compose.yml --profile none down
 
 # Pull latest versions of all containers
-docker compose -p localai -f docker-compose.yml --profile <your-profile> pull
+docker compose -p sc-ai -f docker-compose.yml --profile none pull
 
-# Start services again with your desired profile
-python start_services.py --profile <your-profile>
+# Start services again
+python start_services.py --profile none
 ```
 
-Replace `<your-profile>` with one of: `cpu`, `gpu-nvidia`, `gpu-amd`, or `none`.
+Note: Since this setup uses native Ollama on your host, you'll need to update Ollama separately using your system's package manager or by downloading the latest version from [ollama.com](https://ollama.com/).
 
-Note: The `start_services.py` script itself does not update containers - it only restarts them or pulls them if you are downloading these containers for the first time. To get the latest versions, you must explicitly run the commands above.
+## Managing n8n Workflows
+
+### Workflow Auto-Import
+Workflows in `/n8n/backup/workflows/` are automatically imported when n8n starts for the first time.
+
+### Syncing Workflows Back to Repo (Automated!)
+
+After editing workflows in the n8n UI, use the sync script to export them back to your repo:
+
+```bash
+# Export workflows only
+python sync_n8n_workflows.py
+
+# Export workflows + credentials (use with caution)
+python sync_n8n_workflows.py --with-credentials
+```
+
+The script will:
+- ✅ Check if n8n is running
+- ✅ Export all workflows to `/n8n/backup/workflows/`
+- ✅ List all exported files
+- ✅ Ready to commit to git!
+
+**Recommended workflow:**
+1. Build/edit your workflow in n8n UI at http://localhost:5678
+2. Test it thoroughly
+3. Run: `python sync_n8n_workflows.py`
+4. Review changes: `git diff n8n/backup/`
+5. Commit: `git add n8n/backup/ && git commit -m "Update workflows"`
+
+See `/n8n/backup/README.md` for more details.
 
 ## Troubleshooting
 
@@ -334,18 +293,11 @@ Here are solutions to common issues you might encounter:
 
 - **Supabase Service Unavailable** - Make sure you don't have an "@" character in your Postgres password! If the connection to the kong container is working (the container logs say it is receiving requests from n8n) but n8n says it cannot connect, this is generally the problem from what the community has shared. Other characters might not be allowed too, the @ symbol is just the one I know for sure!
 
-- **SearXNG Restarting**: If the SearXNG container keeps restarting, run the command "chmod 755 searxng" within the local-ai-packaged folder so SearXNG has the permissions it needs to create the uwsgi.ini file.
-
 - **Files not Found in Supabase Folder** - If you get any errors around files missing in the supabase/ folder like .env, docker/docker-compose.yml, etc. this most likely means you had a "bad" pull of the Supabase GitHub repository when you ran the start_services.py script. Delete the supabase/ folder within the Local AI Package folder entirely and try again.
 
 ### GPU Support Issues
 
-- **Windows GPU Support**: If you're having trouble running Ollama with GPU support on Windows with Docker Desktop:
-  1. Open Docker Desktop settings
-  2. Enable WSL 2 backend
-  3. See the [Docker GPU documentation](https://docs.docker.com/desktop/features/gpu/) for more details
-
-- **Linux GPU Support**: If you're having trouble running Ollama with GPU support on Linux, follow the [Ollama Docker instructions](https://github.com/ollama/ollama/blob/main/docs/docker.md).
+- **Native Ollama GPU Support**: Since you're running Ollama natively on your host machine, GPU support is handled by your local Ollama installation. Make sure your Ollama installation is properly configured to use your GPU. Check the [Ollama homepage](https://ollama.com/) for GPU configuration instructions.
 
 ## 👓 Recommended reading
 

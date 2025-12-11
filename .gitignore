@@ -1,8 +1,23 @@
+# Environment files (contain secrets)
 .env
+.env.test
+.env.local
+
+# Docker volumes and data
 volumes/
 shared/
-neo4j/
 shared-backup/
-.env.test
-searxng/settings.yml
-searxng/uwsgi*
+
+# Service data directories
+neo4j/
+supabase/
+
+# N8N data (stored in Docker volume)
+n8n_storage/
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
