@@ -32,7 +32,7 @@ x-n8n: &service-n8n
 
 x-ollama: &service-ollama
   image: ollama/ollama:latest
-  container_name: ollama
+  container_name: sc-ai-ollama
   restart: unless-stopped
   expose:
     - 11434/tcp
@@ -46,7 +46,7 @@ x-ollama: &service-ollama
 
 x-init-ollama: &init-ollama
   image: ollama/ollama:latest
-  container_name: ollama-pull-llama
+  container_name: sc-ai-ollama-pull-llama
   volumes:
     - ollama_storage:/root/.ollama
   entrypoint: /bin/sh
@@ -58,7 +58,7 @@ services:
   open-webui:
     image: ghcr.io/open-webui/open-webui:main
     restart: unless-stopped
-    container_name: open-webui
+    container_name: sc-ai-open-webui
     expose:
       - 8080/tcp
     extra_hosts:
@@ -68,17 +68,19 @@ services:
 
   n8n-import:
     <<: *service-n8n
-    container_name: n8n-import
+    container_name: sc-ai-n8n-import
     entrypoint: /bin/sh
     command:
       - "-c"
       - "n8n import:credentials --separate --input=/backup/credentials && n8n import:workflow --separate --input=/backup/workflows"
     volumes:
       - ./n8n/backup:/backup
+    depends_on:
+      - db
 
   n8n:
     <<: *service-n8n
-    container_name: n8n
+    container_name: sc-ai-n8n
     restart: unless-stopped
     expose:
       - 5678/tcp
@@ -91,6 +93,7 @@ services:
         condition: service_completed_successfully
 
   neo4j:
+    container_name: sc-ai-neo4j
     image: neo4j:latest
     volumes:
         - ./neo4j/logs:/logs
@@ -106,12 +109,12 @@ services:
     restart: always
 
   caddy:
-    container_name: caddy
+    container_name: sc-ai-caddy
     image: docker.io/library/caddy:2-alpine
     restart: unless-stopped
     ports:
-      - 80:80/tcp
-      - 443:443/tcp
+      - 8090:80/tcp
+      - 8091:443/tcp
     expose:
       - 2019/tcp
       - 443/tcp
@@ -141,6 +144,7 @@ services:
         max-file: "1"
 
   langfuse-worker:
+    container_name: sc-ai-langfuse-worker
     image: langfuse/langfuse-worker:3
     restart: always
     depends_on: &langfuse-depends-on
@@ -199,6 +203,7 @@ services:
       REDIS_TLS_KEY: ${REDIS_TLS_KEY:-/certs/redis.key}
 
   langfuse-web:
+    container_name: sc-ai-langfuse-web
     image: langfuse/langfuse:3
     restart: always
     depends_on: *langfuse-depends-on
@@ -219,6 +224,7 @@ services:
       LANGFUSE_INIT_USER_PASSWORD: ${LANGFUSE_INIT_USER_PASSWORD:-}
 
   clickhouse:
+    container_name: sc-ai-clickhouse
     image: clickhouse/clickhouse-server
     restart: always
     user: "101:101"
@@ -241,6 +247,7 @@ services:
       start_period: 1s
 
   minio:
+    container_name: sc-ai-minio
     image: minio/minio
     restart: always
     entrypoint: sh
@@ -262,6 +269,7 @@ services:
       start_period: 1s
 
   postgres:
+    container_name: sc-ai-postgres
     image: postgres:${POSTGRES_VERSION:-17}
     restart: unless-stopped
     healthcheck:
@@ -279,7 +287,7 @@ services:
       - langfuse_postgres_data:/var/lib/postgresql/data
 
   redis:
-    container_name: redis
+    container_name: sc-ai-redis
     image: docker.io/valkey/valkey:8-alpine
     command: valkey-server --save 30 1 --loglevel warning
     restart: unless-stopped
