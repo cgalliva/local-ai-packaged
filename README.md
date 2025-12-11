@@ -181,11 +181,11 @@ pre-configured with network and disk so there isn’t much else you need to
 install. After completing the installation steps above, follow the steps below
 to get started.
 
-1. Open <http://localhost:5678/> in your browser to set up n8n. You’ll only
+1. Open <http://localhost:5679/> in your browser to set up n8n. You'll only
    have to do this once. You are NOT creating an account with n8n in the setup here,
    it is only a local account for your instance!
 2. Open the included workflow:
-   <http://localhost:5678/workflow/vTN9y2dLXqTiDfPT>
+   <http://localhost:5679/workflow/vTN9y2dLXqTiDfPT>
 3. Create credentials for every service:
    
    Ollama URL: http://host.docker.internal:11434 (uses your native Ollama installation)
@@ -201,8 +201,8 @@ to get started.
    until Ollama finishes downloading Llama3.1. You can inspect the docker
    console logs to check on the progress.
 6. Make sure to toggle the workflow as active and copy the "Production" webhook URL!
-7. Open <http://localhost:3000/> in your browser to set up Open WebUI.
-You’ll only have to do this once. You are NOT creating an account with Open WebUI in the 
+7. Open <http://localhost:8082/> in your browser to set up Open WebUI.
+You'll only have to do this once. You are NOT creating an account with Open WebUI in the 
 setup here, it is only a local account for your instance!
 8. Go to Workspace -> Functions -> Add Function -> Give name + description then paste in
 the code from `n8n_pipe.py`
@@ -213,8 +213,8 @@ the code from `n8n_pipe.py`
 you copied in a previous step.
 10. Toggle the function on and now it will be available in your model dropdown in the top left! 
 
-To open n8n at any time, visit <http://localhost:5678/> in your browser.
-To open Open WebUI at any time, visit <http://localhost:3000/>.
+To open n8n at any time, visit <http://localhost:5679/> in your browser.
+To open Open WebUI at any time, visit <http://localhost:8082/>.
 
 With your n8n instance, you'll have access to over 400 integrations and a
 suite of basic and advanced AI nodes such as
@@ -271,7 +271,7 @@ The script will:
 - ✅ Ready to commit to git!
 
 **Recommended workflow:**
-1. Build/edit your workflow in n8n UI at http://localhost:5678
+1. Build/edit your workflow in n8n UI at http://localhost:5679
 2. Test it thoroughly
 3. Run: `python sync_n8n_workflows.py`
 4. Review changes: `git diff n8n/backup/`

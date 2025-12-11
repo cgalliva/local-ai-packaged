@@ -39,15 +39,3 @@ services:
   redis:
     ports:
       - 127.0.0.1:6379:6379
-
-  ollama-cpu:
-    ports:
-      - 127.0.0.1:11435:11434
-
-  ollama-gpu:
-    ports:
-      - 127.0.0.1:11435:11434
-      
-  ollama-gpu-amd:
-    ports:
-      - 127.0.0.1:11435:11434

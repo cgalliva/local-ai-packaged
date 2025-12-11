@@ -24,12 +24,12 @@ def run_command(cmd, cwd=None, capture_output=False):
             return result.stdout.strip()
         else:
             subprocess.run(cmd, cwd=cwd, check=True)
-            return None
+            return True
     except subprocess.CalledProcessError as e:
         print(f"Error: {e}")
         if capture_output and e.stderr:
             print(f"Error output: {e.stderr}")
-        return None
+        return False
 
 def check_n8n_running():
     """Check if n8n container is running."""
@@ -54,7 +54,7 @@ def export_workflows():
     # Export workflows using n8n CLI inside the container
     # The /backup volume is already mounted, so we export directly there
     cmd = [
-        "docker", "exec", "n8n",
+        "docker", "exec", "sc-ai-n8n",
         "n8n", "export:workflow",
         "--all",
         "--separate",
@@ -62,7 +62,7 @@ def export_workflows():
     ]
     
     result = run_command(cmd)
-    if result is not None:
+    if result is not False:
         print("✓ Workflows exported successfully to /n8n/backup/workflows/")
         return True
     else:
@@ -75,7 +75,7 @@ def export_credentials():
     print("⚠️  WARNING: Credential files may contain sensitive data!")
     
     cmd = [
-        "docker", "exec", "n8n",
+        "docker", "exec", "sc-ai-n8n",
         "n8n", "export:credentials",
         "--all",
         "--separate",
@@ -83,7 +83,7 @@ def export_credentials():
     ]
     
     result = run_command(cmd)
-    if result is not None:
+    if result is not False:
         print("✓ Credentials exported successfully to /n8n/backup/credentials/")
         print("⚠️  Remember: Don't commit sensitive credentials to git!")
         return True

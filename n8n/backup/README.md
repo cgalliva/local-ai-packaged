@@ -61,7 +61,7 @@ To save your work back to this repo after editing in n8n:
 
 ### 💡 Best Practice Workflow
 
-1. **Build** your workflow in n8n UI (http://localhost:5678)
+1. **Build** your workflow in n8n UI (http://localhost:5679)
 2. **Test** it thoroughly
 3. **Sync** back to repo: `python sync_n8n_workflows.py`
 4. **Review** changes: `git diff n8n/backup/`
