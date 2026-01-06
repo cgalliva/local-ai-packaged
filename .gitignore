@@ -10,11 +10,12 @@
 
 # Docker volumes and data
 volumes/
-shared/data/   # Source data files (large files, user-specific)
+shared/data/*  # Ignore all files in data/ by default
 shared-backup/
-# But track the structure and READMEs
+# But track these collaborative files
 !shared/data/README.md
 !shared/data/.gitkeep
+!shared/data/word-clusters.md  # Collaborative reference taxonomy
 
 # Service data directories
 neo4j/
