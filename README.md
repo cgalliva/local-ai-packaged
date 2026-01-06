@@ -14,6 +14,8 @@ This simplified stack focuses on the core components needed for an AI chat demo 
 
 ✅ [**Native Ollama**](https://ollama.com/) - Running on host machine for optimal performance with Apple Silicon/GPU
 
+✅ [**RAG Service**](./rag-service/) - SOTA retrieval system with semantic chunking and high-dimensional embeddings
+
 ✅ [**Neo4j**](https://neo4j.com/) - Knowledge graph engine (optional, for advanced GraphRAG)
 
 ✅ [**Langfuse**](https://langfuse.com/) - Open source LLM engineering platform (optional, for observability)
@@ -270,6 +272,27 @@ The script will:
 5. Commit: `git add n8n/backup/ && git commit -m "Update workflows"`
 
 See `/n8n/backup/README.md` for more details.
+
+## 📚 RAG System
+
+This project includes a production-ready RAG (Retrieval-Augmented Generation) system for semantic search over large documents.
+
+**Features:**
+- ✅ Semantic chunking with LlamaIndex
+- ✅ 4096-dimensional embeddings via Ollama
+- ✅ Supabase pgvector storage
+- ✅ FastAPI retrieval service
+- ✅ Ready-to-use n8n workflows
+
+**Quick Start:**
+```bash
+# Ingest your book
+python3 rag-service/run_ingestion.py
+
+# Query via n8n workflow (import rag-retrieval-generation.json)
+```
+
+**Full Documentation:** See [`rag-service/RAG-SYSTEM.md`](./rag-service/RAG-SYSTEM.md)
 
 ## Troubleshooting
 

@@ -1,0 +1,156 @@
+{
+  "name": "SOTA RAG - Retrieval + Generation",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "start-node",
+      "name": "Manual Trigger",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://rag-service:8080/retrieve",
+        "authentication": "none",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "query",
+              "value": "={{ $json.query || \"What is this book about?\" }}"
+            },
+            {
+              "name": "top_k",
+              "value": 5
+            },
+            {
+              "name": "use_vector",
+              "value": true
+            },
+            {
+              "name": "use_graph",
+              "value": false
+            }
+          ]
+        },
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "id": "retrieve-node",
+      "name": "Retrieve from RAG",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [450, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Format retrieved chunks into context for LLM\nconst data = $input.first().json;\nconst query = data.query;\nconst chunks = data.chunks || [];\n\n// Build context from chunks\nconst context = chunks.map((chunk, i) => \n  `[Source ${i+1}] (Score: ${chunk.score?.toFixed(3)})\\n${chunk.text}`\n).join('\\n\\n');\n\n// Create prompt for LLM\nconst prompt = `You are answering questions about a book using provided context.\n\nContext from the book:\n${context}\n\nUser Question: ${query}\n\nProvide a comprehensive answer based ONLY on the context above. If the context doesn't contain enough information, say so.`;\n\nreturn {\n  query: query,\n  prompt: prompt,\n  chunks_used: chunks.length,\n  retrieval_method: data.retrieval_method\n};\n"
+      },
+      "id": "format-context-node",
+      "name": "Format Context",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [650, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://host.docker.internal:11434/api/generate",
+        "authentication": "none",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "model",
+              "value": "qwen3:30b"
+            },
+            {
+              "name": "prompt",
+              "value": "={{ $json.prompt }}"
+            },
+            {
+              "name": "stream",
+              "value": false
+            }
+          ]
+        },
+        "options": {
+          "timeout": 120000
+        }
+      },
+      "id": "generate-node",
+      "name": "Generate with Ollama",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [850, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Format final response\nconst currentItem = $input.first().json;\nconst previousItem = $node[\"Format Context\"].json;\n\nreturn {\n  query: previousItem.query,\n  answer: currentItem.response,\n  chunks_used: previousItem.chunks_used,\n  retrieval_method: previousItem.retrieval_method,\n  model: \"qwen3:30b\",\n  timestamp: new Date().toISOString()\n};\n"
+      },
+      "id": "format-response-node",
+      "name": "Format Response",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1050, 300]
+    }
+  ],
+  "connections": {
+    "Manual Trigger": {
+      "main": [
+        [
+          {
+            "node": "Retrieve from RAG",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Retrieve from RAG": {
+      "main": [
+        [
+          {
+            "node": "Format Context",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format Context": {
+      "main": [
+        [
+          {
+            "node": "Generate with Ollama",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate with Ollama": {
+      "main": [
+        [
+          {
+            "node": "Format Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2026-01-04T07:50:00.000Z",
+  "versionId": "1"
+}
+

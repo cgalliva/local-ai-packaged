@@ -11,6 +11,10 @@ shared-backup/
 # Service data directories
 neo4j/
 supabase/
+rag-service/storage/
+
+# Log files
+*.log
 
 # N8N data (stored in Docker volume)
 n8n_storage/
