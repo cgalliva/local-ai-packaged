@@ -1,0 +1,15 @@
+Place your book file here!
+
+Supported formats:
+- Plain text: your-book.txt (recommended)
+- Markdown: your-book.md (good for structure)
+- JSON: your-book.json (for pre-structured content)
+
+Example:
+```
+your-book.txt           ← Your actual book content (107K words)
+metadata.json          ← Book metadata (optional)
+```
+
+See QUICK-START.md for instructions!
+

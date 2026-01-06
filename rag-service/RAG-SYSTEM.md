@@ -25,13 +25,13 @@ docker compose up -d
 ### 2. Ingest Book
 
 ```bash
-# Place your book in: shared/books/your-book.md
+# Place your book in: shared/data/your-book.md
 # Then run from project root:
 python3 rag-service/run_ingestion.py
 ```
 
 This will:
-- Load the book from `shared/books/`
+- Load the book from `shared/data/`
 - Extract metadata automatically
 - Create semantic chunks using LlamaIndex
 - Generate 4096-dimensional embeddings via Ollama
@@ -136,8 +136,12 @@ sc-ai-demo/
 │   └── RAG-SYSTEM.md          # This documentation
 ├── n8n/workflows/
 │   └── rag-retrieval-generation.json  # Working workflow
-└── shared/books/
-    └── SOURCE CODE full manuscript 2025.docx.md  # Your book
+└── shared/
+    ├── data/                   # Source materials for RAG
+    │   ├── SOURCE CODE...md   # Your book
+    │   └── word-clusters.md   # Reference data
+    └── projects/               # Development work
+        └── coping-styles-classifier/
 ```
 
 ## Troubleshooting

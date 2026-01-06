@@ -13,8 +13,8 @@ url = "http://rag-service:8080/ingest"
 payload = {"file_path": "SOURCE CODE full manuscript 2025.docx.md"}
 
 print(f"\n📤 Sending request to: {url}")
-print(f"📖 File: {payload['file_path']}")
-print("\n⏳ This will take 5-10 minutes (creating ~261 embeddings)...")
+print(f"📖 File: {payload['file_path']} (from /data/shared/data/)")
+print("\n⏳ This will take 30-45 minutes (semantic chunking + embeddings)...")
 print("   Watch Docker logs: docker logs -f sc-ai-rag-service\n")
 
 try:

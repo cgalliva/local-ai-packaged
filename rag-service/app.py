@@ -229,8 +229,8 @@ async def ingest_document(request: IngestRequest):
     try:
         logger.info(f"📥 Starting ingestion of: {request.file_path}")
         
-        # Load file from shared volume
-        file_full_path = f"/data/shared/books/{request.file_path}"
+                # Load file from shared volume (data/ directory)
+                file_full_path = f"/data/shared/data/{request.file_path}"
         if not os.path.exists(file_full_path):
             raise HTTPException(status_code=404, detail=f"File not found: {request.file_path}")
         

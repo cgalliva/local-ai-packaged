@@ -10,8 +10,11 @@
 
 # Docker volumes and data
 volumes/
-shared/
+shared/data/   # Source data files (large files, user-specific)
 shared-backup/
+# But track the structure and READMEs
+!shared/data/README.md
+!shared/data/.gitkeep
 
 # Service data directories
 neo4j/
