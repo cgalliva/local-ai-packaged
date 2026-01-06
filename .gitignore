@@ -2,6 +2,8 @@
 .env
 .env.test
 .env.local
+.env.ingest
+.env.*
 
 # Docker volumes and data
 volumes/
