@@ -12,6 +12,11 @@ This directory contains all raw source materials that may be used for RAG ingest
 - `word-clusters.md` - Coping styles classification framework
 - Status: Available for RAG ingestion or prompt reference
 
+**Training Examples:**
+- `coping-styles-examples.jsonl` - Prompt/classification pairs for LLM training
+- Format: JSON Lines (one example per line)
+- Status: Collaborative, version-controlled training data
+
 ## How It Works
 
 1. **Automatic Processing**: Place your data file (`.txt` or `.md`) here
@@ -40,11 +45,36 @@ The RAG service will automatically:
 - **Markdown (`.md`)** - Recommended (preserves structure)
 - **Plain text (`.txt`)** - Also works perfectly
 
+## Working with Training Examples
+
+**JSONL Format (coping-styles-examples.jsonl):**
+```jsonl
+{"prompt": "User's problem statement...", "coping_styles": ["Style1", "Style2"], "raw_diagnosis": "Style1, Style2", "metadata": {"source": "...", "validated": false}}
+```
+
+**Adding new examples:**
+```bash
+# Just append a new line to the file
+echo '{"prompt": "New example...", "coping_styles": ["Frustrated"], ...}' >> shared/data/coping-styles-examples.jsonl
+
+# Commit changes
+git add shared/data/coping-styles-examples.jsonl
+git commit -m "Add new training example"
+```
+
+**Reading in Python:**
+```python
+import jsonlines
+with jsonlines.open('shared/data/coping-styles-examples.jsonl') as reader:
+    for example in reader:
+        print(example['prompt'], example['coping_styles'])
+```
+
 ## Future Sources
 
 Planned additions:
 - Session transcripts
-- Classification examples
+- Additional classification examples
 - Coding session examples
 - Audio transcripts
 

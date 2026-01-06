@@ -16,6 +16,7 @@ shared-backup/
 !shared/data/README.md
 !shared/data/.gitkeep
 !shared/data/word-clusters.md  # Collaborative reference taxonomy
+!shared/data/coping-styles-examples.jsonl  # Collaborative training examples
 
 # Service data directories
 neo4j/
