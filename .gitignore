@@ -4,6 +4,9 @@
 .env.local
 .env.ingest
 .env.*
+# But allow example env files
+!.env.example
+!.env.*.example
 
 # Docker volumes and data
 volumes/
