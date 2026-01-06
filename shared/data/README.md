@@ -49,17 +49,39 @@ The RAG service will automatically:
 
 **JSONL Format (coping-styles-examples.jsonl):**
 ```jsonl
-{"prompt": "User's problem statement...", "coping_styles": ["Style1", "Style2"], "raw_diagnosis": "Style1, Style2", "metadata": {"source": "...", "validated": false}}
+{
+  "prompt": "User's problem statement...",
+  "coping_styles": ["Style1", "Style2"],
+  "code": "category_name",
+  "raw_diagnosis": "Professional diagnosis text (optional, to be added)",
+  "metadata": {
+    "source": "...",
+    "validated": false,
+    "date_added": "2026-01-06",
+    "note": "Additional context"
+  }
+}
 ```
+
+**Fields:**
+- `prompt` - The user's problem statement (required)
+- `coping_styles` - Array of identified coping styles (required)
+- `code` - Category/grouping code for the example (optional but recommended)
+- `raw_diagnosis` - Professional diagnosis text (optional, add after review)
+- `metadata` - Source, validation status, notes
 
 **Adding new examples:**
 ```bash
-# Just append a new line to the file
-echo '{"prompt": "New example...", "coping_styles": ["Frustrated"], ...}' >> shared/data/coping-styles-examples.jsonl
+# Interactive helper script (recommended)
+cd shared/projects/coping-styles-classifier
+python add_example.py
 
-# Commit changes
-git add shared/data/coping-styles-examples.jsonl
-git commit -m "Add new training example"
+# Or non-interactive
+python add_example.py --prompt "User statement..." --styles "Frustrated,Disconnected" --code "work_stress"
+
+# Then commit
+git add ../../data/coping-styles-examples.jsonl
+git commit -m "Add new training example: work_stress"
 ```
 
 **Reading in Python:**
