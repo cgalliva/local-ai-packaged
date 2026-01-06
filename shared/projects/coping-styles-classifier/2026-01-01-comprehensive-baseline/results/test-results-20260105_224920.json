@@ -1,0 +1,351 @@
+{
+  "ministral-3:14b-instruct-2512-q8_0": {
+    "prompt-comprehensive.md": {
+      "prompt_file": "prompt-comprehensive.md",
+      "model": "ministral-3:14b-instruct-2512-q8_0",
+      "test_results": [
+        {
+          "test_case_id": 1,
+          "score": 2.0,
+          "metrics": {
+            "precision": 0.2,
+            "recall": 0.2,
+            "true_positives": 1,
+            "false_positives": 4,
+            "false_negatives": 4,
+            "top_3_correct": 1,
+            "returned_styles": [
+              "DEPRIVED",
+              "OMNIPOTENT",
+              "SYMBIOTIC",
+              "DISCONNECTED",
+              "FRICTIVE"
+            ]
+          },
+          "raw_response": "```json\n{\n  \"statement\": \"I'm feeling all consumed and obsessed by this other person's presence. I'm worried that I'm slipping into like old patterns of giving way more than I'm actually receiving. An..."
+        },
+        {
+          "test_case_id": 2,
+          "score": 10.0,
+          "metrics": {
+            "precision": 0.8,
+            "recall": 0.571,
+            "true_positives": 4,
+            "false_positives": 1,
+            "false_negatives": 3,
+            "top_3_correct": 3,
+            "returned_styles": [
+              "FRICTIVE",
+              "OMNIPOTENT",
+              "SYMBIOTIC",
+              "DISCONNECTED",
+              "CONSTRICTED"
+            ]
+          },
+          "raw_response": "```json\n{\n  \"statement\": \"Um, so I just started dating this person, and it's like, triggered me, because I'm feel so anxious about, like, what's going to happen? Does he like me? It's really, like, de..."
+        },
+        {
+          "test_case_id": 3,
+          "score": 4.0,
+          "metrics": {
+            "precision": 0.5,
+            "recall": 0.667,
+            "true_positives": 2,
+            "false_positives": 2,
+            "false_negatives": 1,
+            "top_3_correct": 1,
+            "returned_styles": [
+              "FRUSTRATED",
+              "CONSTRICTED",
+              "OMNIPOTENT",
+              "DISCONNECTED"
+            ]
+          },
+          "raw_response": "```json\n{\n  \"statement\": \"Okay, so back in August, I noticed that there was bubbling paint on my car in several different places, so I looked it up online for that model of car, and it said that it's ..."
+        },
+        {
+          "test_case_id": 4,
+          "score": 7.0,
+          "metrics": {
+            "precision": 0.8,
+            "recall": 0.8,
+            "true_positives": 4,
+            "false_positives": 1,
+            "false_negatives": 1,
+            "top_3_correct": 2,
+            "returned_styles": [
+              "DISCONNECTED",
+              "PREMATURE",
+              "OMNIPOTENT",
+              "FRUSTRATED",
+              "CONSTRICTED"
+            ]
+          },
+          "raw_response": "```json\n{\n  \"statement\": \"So I'm really struggling to be present. Currently, I find myself thinking about all of these things happening in the future and all these problems that I want to take care of..."
+        },
+        {
+          "test_case_id": 5,
+          "score": 10.0,
+          "metrics": {
+            "precision": 0.75,
+            "recall": 1.0,
+            "true_positives": 3,
+            "false_positives": 1,
+            "false_negatives": 0,
+            "top_3_correct": 3,
+            "returned_styles": [
+              "INDULGED",
+              "FRUSTRATED",
+              "DISCONNECTED",
+              "OMNIPOTENT"
+            ]
+          },
+          "raw_response": "```json\n{\n  \"statement\": \"So I have to really adult right now in my life. I have to rent a car, buy a car, and I have to book a flight, and the airport I want to book from isn't having flights when I ..."
+        }
+      ],
+      "average_score": 6.6
+    },
+    "prompt-keywords-only.md": {
+      "prompt_file": "prompt-keywords-only.md",
+      "model": "ministral-3:14b-instruct-2512-q8_0",
+      "test_results": [
+        {
+          "test_case_id": 1,
+          "score": 2.0,
+          "metrics": {
+            "precision": 0.25,
+            "recall": 0.2,
+            "true_positives": 1,
+            "false_positives": 3,
+            "false_negatives": 4,
+            "top_3_correct": 1,
+            "returned_styles": [
+              "OMNIPOTENT",
+              "SYMBIOTIC",
+              "DEPRIVED",
+              "DISCONNECTED"
+            ]
+          },
+          "raw_response": "```json\n{\n  \"statement\": \"I'm feeling all consumed and obsessed by this other person's presence. I'm worried that I'm slipping into like old patterns of giving way more than I'm actually receiving. An..."
+        },
+        {
+          "test_case_id": 2,
+          "score": 7.0,
+          "metrics": {
+            "precision": 0.6,
+            "recall": 0.429,
+            "true_positives": 3,
+            "false_positives": 2,
+            "false_negatives": 4,
+            "top_3_correct": 2,
+            "returned_styles": [
+              "FRICTIVE",
+              "DEPRIVED",
+              "OMNIPOTENT",
+              "DISCONNECTED",
+              "SQUASHED"
+            ]
+          },
+          "raw_response": "```json\n{\n  \"statement\": \"Um, so I just started dating this person, and it's like, triggered me, because I'm feel so anxious about, like, what's going to happen? Does he like me? It's really, like, de..."
+        },
+        {
+          "test_case_id": 3,
+          "score": 2.0,
+          "metrics": {
+            "precision": 0.333,
+            "recall": 0.333,
+            "true_positives": 1,
+            "false_positives": 2,
+            "false_negatives": 2,
+            "top_3_correct": 1,
+            "returned_styles": [
+              "FRUSTRATED",
+              "WITHHOLDING [FRUSTRATED]",
+              "SACRIFICING [FRUSTRATED]"
+            ]
+          },
+          "raw_response": "```json\n{\n  \"statement\": \"Okay, so back in August, I noticed that there was bubbling paint on my car in several different places, so I looked it up online for that model of car, and it said that it's ..."
+        },
+        {
+          "test_case_id": 4,
+          "score": 2.0,
+          "metrics": {
+            "precision": 0.333,
+            "recall": 0.2,
+            "true_positives": 1,
+            "false_positives": 2,
+            "false_negatives": 4,
+            "top_3_correct": 0,
+            "returned_styles": [
+              "FLOATY [DISCONNECTED]",
+              "STIFF [DISCONNECTED]",
+              "FRUSTRATED"
+            ]
+          },
+          "raw_response": "```json\n{\n  \"statement\": \"So I'm really struggling to be present. Currently, I find myself thinking about all of these things happening in the future and all these problems that I want to take care of..."
+        },
+        {
+          "test_case_id": 5,
+          "score": 6.0,
+          "metrics": {
+            "precision": 0.667,
+            "recall": 0.667,
+            "true_positives": 2,
+            "false_positives": 1,
+            "false_negatives": 1,
+            "top_3_correct": 2,
+            "returned_styles": [
+              "INDULGED",
+              "FRUSTRATED",
+              "PREMATURE"
+            ]
+          },
+          "raw_response": "```json\n{\n  \"statement\": \"So I have to really adult right now in my life. I have to rent a car, buy a car, and I have to book a flight, and the airport I want to book from isn't having flights when I ..."
+        }
+      ],
+      "average_score": 3.8
+    },
+    "prompt-semantic-only.md": {
+      "prompt_file": "prompt-semantic-only.md",
+      "model": "ministral-3:14b-instruct-2512-q8_0",
+      "test_results": [
+        {
+          "test_case_id": 1,
+          "score": 0.0,
+          "metrics": {
+            "error": "Failed to parse response"
+          },
+          "raw_response": "```json\n{\n  \"statement\": \"I'm feeling all consumed and obsessed by this other person's presence. I'm worried that I'm slipping into like old patterns of giving way more than I'm actually receiving. An"
+        },
+        {
+          "test_case_id": 2,
+          "score": 0.0,
+          "metrics": {
+            "error": "Failed to parse response"
+          },
+          "raw_response": "```json\n{\n  \"statement\": \"Um, so I just started dating this person, and it's like, triggered me, because I'm feel so anxious about, like, what's going to happen? Does he like me? It's really, like, de"
+        },
+        {
+          "test_case_id": 3,
+          "score": 0.0,
+          "metrics": {
+            "error": "Failed to parse response"
+          },
+          "raw_response": "```json\n{\n  \"statement\": \"Okay, so back in August, I noticed that there was bubbling paint on my car in several different places, so I looked it up online for that model of car, and it said that it's "
+        },
+        {
+          "test_case_id": 4,
+          "score": 0.0,
+          "metrics": {
+            "error": "Failed to parse response"
+          },
+          "raw_response": "```json\n{\n  \"statement\": \"So I'm really struggling to be present. Currently, I find myself thinking about all of these things happening in the future and all these problems that I want to take care of"
+        },
+        {
+          "test_case_id": 5,
+          "score": 0.0,
+          "metrics": {
+            "error": "Failed to parse response"
+          },
+          "raw_response": "```json\n{\n  \"statement\": \"So I have to really adult right now in my life. I have to rent a car, buy a car, and I have to book a flight, and the airport I want to book from isn't having flights when I "
+        }
+      ],
+      "average_score": 0.0
+    },
+    "prompt-embodiment-only.md": {
+      "prompt_file": "prompt-embodiment-only.md",
+      "model": "ministral-3:14b-instruct-2512-q8_0",
+      "test_results": [
+        {
+          "test_case_id": 1,
+          "score": 0.0,
+          "metrics": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "true_positives": 0,
+            "false_positives": 3,
+            "false_negatives": 5,
+            "top_3_correct": 0,
+            "returned_styles": [
+              "SYMBIOTIC",
+              "DEPRIVED",
+              "PROVOCATIVE"
+            ]
+          },
+          "raw_response": "```json\n{\n  \"statement\": \"I'm feeling all consumed and obsessed by this other person's presence. I'm worried that I'm slipping into like old patterns of giving way more than I'm actually receiving. An..."
+        },
+        {
+          "test_case_id": 2,
+          "score": 4.0,
+          "metrics": {
+            "precision": 0.667,
+            "recall": 0.286,
+            "true_positives": 2,
+            "false_positives": 1,
+            "false_negatives": 5,
+            "top_3_correct": 1,
+            "returned_styles": [
+              "DEPRIVED",
+              "SYMBIOTIC",
+              "PREMATURE"
+            ]
+          },
+          "raw_response": "```json\n{\n  \"statement\": \"Um, so I just started dating this person, and it's like, triggered me, because I'm feel so anxious about, like, what's going to happen? Does he like me? It's really, like, de..."
+        },
+        {
+          "test_case_id": 3,
+          "score": 6.0,
+          "metrics": {
+            "precision": 1.0,
+            "recall": 0.667,
+            "true_positives": 2,
+            "false_positives": 0,
+            "false_negatives": 1,
+            "top_3_correct": 2,
+            "returned_styles": [
+              "FRUSTRATED",
+              "DISCONNECTED"
+            ]
+          },
+          "raw_response": "```json\n{\n  \"statement\": \"Okay, so back in August, I noticed that there was bubbling paint on my car in several different places, so I looked it up online for that model of car, and it said that it's ..."
+        },
+        {
+          "test_case_id": 4,
+          "score": 4.0,
+          "metrics": {
+            "precision": 0.667,
+            "recall": 0.4,
+            "true_positives": 2,
+            "false_positives": 1,
+            "false_negatives": 3,
+            "top_3_correct": 1,
+            "returned_styles": [
+              "DISCONNECTED",
+              "FRUSTRATED",
+              "PREMATURE"
+            ]
+          },
+          "raw_response": "```json\n{\n  \"statement\": \"So I'm really struggling to be present. Currently, I find myself thinking about all of these things happening in the future and all these problems that I want to take care of..."
+        },
+        {
+          "test_case_id": 5,
+          "score": 6.0,
+          "metrics": {
+            "precision": 1.0,
+            "recall": 0.667,
+            "true_positives": 2,
+            "false_positives": 0,
+            "false_negatives": 1,
+            "top_3_correct": 2,
+            "returned_styles": [
+              "INDULGED",
+              "FRUSTRATED"
+            ]
+          },
+          "raw_response": "```json\n{\n  \"statement\": \"So I have to really adult right now in my life. I have to rent a car, buy a car, and I have to book a flight, and the airport I want to book from isn't having flights when I ..."
+        }
+      ],
+      "average_score": 4.0
+    }
+  }
+}

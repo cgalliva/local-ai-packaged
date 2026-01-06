@@ -1,0 +1,218 @@
+{
+  "prompt_file": "prompt-only-unique-keywords-5-styles-diconnected-to-symbiotic.md",
+  "timestamp": "2026-01-06T09:10:16.683708",
+  "models": {
+    "qwen3:8b": {
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "details": [
+        {
+          "test_id": 1,
+          "full_diagnosis": [
+            "OMNIPOTENT",
+            "FRUSTRATED",
+            "PREMATURE",
+            "CONSTRICTED",
+            "FLOATY"
+          ],
+          "available_diagnosis": [
+            "OMNIPOTENT",
+            "FLOATY"
+          ],
+          "predicted": [],
+          "score": 0,
+          "response": null
+        },
+        {
+          "test_id": 2,
+          "full_diagnosis": [
+            "OMNIPOTENT",
+            "SYMBIOTIC",
+            "FRICTIVE",
+            "DEPRIVED",
+            "FLOATY",
+            "FLIGHTY",
+            "CONSTRICTED"
+          ],
+          "available_diagnosis": [
+            "OMNIPOTENT",
+            "SYMBIOTIC",
+            "FRICTIVE",
+            "DEPRIVED",
+            "FLOATY",
+            "FLIGHTY"
+          ],
+          "predicted": [],
+          "score": 0,
+          "response": null
+        },
+        {
+          "test_id": 3,
+          "full_diagnosis": [
+            "DISCONNECTED",
+            "FRUSTRATED",
+            "SACRIFICING"
+          ],
+          "available_diagnosis": [
+            "DISCONNECTED"
+          ],
+          "predicted": [],
+          "score": 0,
+          "response": null
+        },
+        {
+          "test_id": 4,
+          "full_diagnosis": [
+            "FRUSTRATED",
+            "FLOATY",
+            "CONSTRICTED",
+            "PREMATURE",
+            "OMNIPOTENT"
+          ],
+          "available_diagnosis": [
+            "FLOATY",
+            "OMNIPOTENT"
+          ],
+          "predicted": [],
+          "score": 0,
+          "response": null
+        },
+        {
+          "test_id": 5,
+          "full_diagnosis": [
+            "INDULGED",
+            "FRUSTRATED",
+            "DISCONNECTED"
+          ],
+          "available_diagnosis": [
+            "DISCONNECTED"
+          ],
+          "predicted": [],
+          "score": 0,
+          "response": null
+        }
+      ],
+      "average_score": 0.0
+    },
+    "gpt-oss:120b": {
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "details": [
+        {
+          "test_id": 1,
+          "full_diagnosis": [
+            "OMNIPOTENT",
+            "FRUSTRATED",
+            "PREMATURE",
+            "CONSTRICTED",
+            "FLOATY"
+          ],
+          "available_diagnosis": [
+            "OMNIPOTENT",
+            "FLOATY"
+          ],
+          "predicted": [],
+          "score": 0,
+          "response": null
+        },
+        {
+          "test_id": 2,
+          "full_diagnosis": [
+            "OMNIPOTENT",
+            "SYMBIOTIC",
+            "FRICTIVE",
+            "DEPRIVED",
+            "FLOATY",
+            "FLIGHTY",
+            "CONSTRICTED"
+          ],
+          "available_diagnosis": [
+            "OMNIPOTENT",
+            "SYMBIOTIC",
+            "FRICTIVE",
+            "DEPRIVED",
+            "FLOATY",
+            "FLIGHTY"
+          ],
+          "predicted": [],
+          "score": 0,
+          "response": null
+        },
+        {
+          "test_id": 3,
+          "full_diagnosis": [
+            "DISCONNECTED",
+            "FRUSTRATED",
+            "SACRIFICING"
+          ],
+          "available_diagnosis": [
+            "DISCONNECTED"
+          ],
+          "predicted": [],
+          "score": 0,
+          "response": null
+        },
+        {
+          "test_id": 4,
+          "full_diagnosis": [
+            "FRUSTRATED",
+            "FLOATY",
+            "CONSTRICTED",
+            "PREMATURE",
+            "OMNIPOTENT"
+          ],
+          "available_diagnosis": [
+            "FLOATY",
+            "OMNIPOTENT"
+          ],
+          "predicted": [],
+          "score": 0,
+          "response": null
+        },
+        {
+          "test_id": 5,
+          "full_diagnosis": [
+            "INDULGED",
+            "FRUSTRATED",
+            "DISCONNECTED"
+          ],
+          "available_diagnosis": [
+            "DISCONNECTED"
+          ],
+          "predicted": [],
+          "score": 0,
+          "response": null
+        }
+      ],
+      "average_score": 0.0
+    }
+  },
+  "available_styles": [
+    "DISCONNECTED",
+    "PURSUING",
+    "MASKED",
+    "OMNIPOTENT",
+    "STIFF",
+    "SYMBIOTIC",
+    "FLIGHTY",
+    "ELUSIVE",
+    "WOUNDED",
+    "INDISPENSABLE",
+    "STOCKPILING",
+    "FLOATY",
+    "DEPRIVED",
+    "SCAVENGING",
+    "FRICTIVE",
+    "CHARMING"
+  ]
+}

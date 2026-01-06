@@ -1,0 +1,753 @@
+{
+  "qwen3:8b": {
+    "prompt-comprehensive.md": {
+      "prompt_file": "prompt-comprehensive.md",
+      "model": "qwen3:8b",
+      "test_results": [
+        {
+          "test_case_id": 1,
+          "score": 4.0,
+          "metrics": {
+            "precision": 0.4,
+            "recall": 0.4,
+            "true_positives": 2,
+            "false_positives": 3,
+            "false_negatives": 3,
+            "top_3_correct": 1,
+            "returned_styles": [
+              "OMNIPOTENT",
+              "FRUSTRATED",
+              "SYMBIOTIC",
+              "DISCONNECTED",
+              "IDEALIZING"
+            ]
+          },
+          "raw_response": "Thinking...\nOkay, let's tackle this statement. The user is feeling consumed and obsessed by another person's presence. They mention slipping into old patterns of giving more than receiving, feeling vu..."
+        },
+        {
+          "test_case_id": 2,
+          "score": 10.0,
+          "metrics": {
+            "precision": 0.75,
+            "recall": 0.429,
+            "true_positives": 3,
+            "false_positives": 1,
+            "false_negatives": 4,
+            "top_3_correct": 3,
+            "returned_styles": [
+              "FRICTIVE",
+              "OMNIPOTENT",
+              "SYMBIOTIC",
+              "DISCONNECTED"
+            ]
+          },
+          "raw_response": "Thinking...\nOkay, let's tackle this statement. The user is talking about starting a new relationship and feeling anxious. They mention being triggered, feeling destabilized, and worrying about whether..."
+        },
+        {
+          "test_case_id": 3,
+          "score": 2.0,
+          "metrics": {
+            "precision": 0.333,
+            "recall": 0.333,
+            "true_positives": 1,
+            "false_positives": 2,
+            "false_negatives": 2,
+            "top_3_correct": 1,
+            "returned_styles": [
+              "FRICTIVE",
+              "FRUSTRATED",
+              "CONSTRICTED"
+            ]
+          },
+          "raw_response": "Thinking...\nOkay, let's tackle this statement. The user is talking about a car issue with a dealership and Jeep's warranty claim. First, I need to identify the coping styles based on the provided guid..."
+        },
+        {
+          "test_case_id": 4,
+          "score": 7.0,
+          "metrics": {
+            "precision": 0.8,
+            "recall": 0.8,
+            "true_positives": 4,
+            "false_positives": 1,
+            "false_negatives": 1,
+            "top_3_correct": 2,
+            "returned_styles": [
+              "DISCONNECTED",
+              "PREMATURE",
+              "OMNIPOTENT",
+              "CONSTRICTED",
+              "FRUSTRATED"
+            ]
+          },
+          "raw_response": "Thinking...\nOkay, let's tackle this statement. The user is talking about struggling to be present, constantly thinking about the future, problems to solve, and other people's issues. They mention bein..."
+        },
+        {
+          "test_case_id": 5,
+          "score": 10.0,
+          "metrics": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "true_positives": 3,
+            "false_positives": 0,
+            "false_negatives": 0,
+            "top_3_correct": 3,
+            "returned_styles": [
+              "INDULGED",
+              "FRUSTRATED",
+              "DISCONNECTED"
+            ]
+          },
+          "raw_response": "Thinking...\nOkay, let's tackle this statement. The user is talking about having to handle adult responsibilities like renting and buying a car, booking a flight, and dealing with system issues. They m..."
+        }
+      ],
+      "average_score": 6.6
+    },
+    "prompt-keywords-only.md": {
+      "prompt_file": "prompt-keywords-only.md",
+      "model": "qwen3:8b",
+      "test_results": [
+        {
+          "test_case_id": 1,
+          "score": 2.0,
+          "metrics": {
+            "precision": 0.333,
+            "recall": 0.2,
+            "true_positives": 1,
+            "false_positives": 2,
+            "false_negatives": 4,
+            "top_3_correct": 0,
+            "returned_styles": [
+              "DISCONNECTED",
+              "SQUASHED",
+              "FRUSTRATED"
+            ]
+          },
+          "raw_response": "Thinking...\nOkay, let's tackle this statement. The user is feeling consumed and obsessed by another person, worried about giving too much without receiving. They mention vulnerability, fear of losing ..."
+        },
+        {
+          "test_case_id": 2,
+          "score": 2.0,
+          "metrics": {
+            "precision": 0.333,
+            "recall": 0.143,
+            "true_positives": 1,
+            "false_positives": 2,
+            "false_negatives": 6,
+            "top_3_correct": 0,
+            "returned_styles": [
+              "FLOATY",
+              "FRICTIVE \u2192 STILL",
+              "CONSTRICTED \u2192 FREE"
+            ]
+          },
+          "raw_response": "Thinking...\nOkay, let's tackle this. The user wants me to analyze the given statement and classify it using the provided keyword clusters. First, I need to read through the statement carefully to unde..."
+        },
+        {
+          "test_case_id": 3,
+          "score": 2.0,
+          "metrics": {
+            "precision": 1.0,
+            "recall": 0.333,
+            "true_positives": 1,
+            "false_positives": 0,
+            "false_negatives": 2,
+            "top_3_correct": 1,
+            "returned_styles": [
+              "FRUSTRATED"
+            ]
+          },
+          "raw_response": "Thinking...\nOkay, let's tackle this. The user wants me to analyze the given statement and classify it using the provided keyword clusters. First, I need to understand the statement thoroughly. \n\nThe p..."
+        },
+        {
+          "test_case_id": 4,
+          "score": 2.0,
+          "metrics": {
+            "precision": 0.5,
+            "recall": 0.2,
+            "true_positives": 1,
+            "false_positives": 1,
+            "false_negatives": 4,
+            "top_3_correct": 0,
+            "returned_styles": [
+              "DISCONNECTED",
+              "DISCONNECTED",
+              "FRUSTRATED"
+            ]
+          },
+          "raw_response": "Thinking...\nOkay, let me try to figure out how to classify this statement. The user is talking about struggling to be present, constantly thinking about the future, problems to solve, and not being in..."
+        },
+        {
+          "test_case_id": 5,
+          "score": 6.0,
+          "metrics": {
+            "precision": 1.0,
+            "recall": 0.667,
+            "true_positives": 2,
+            "false_positives": 0,
+            "false_negatives": 1,
+            "top_3_correct": 2,
+            "returned_styles": [
+              "INDULGED",
+              "FRUSTRATED"
+            ]
+          },
+          "raw_response": "Thinking...\nOkay, let's tackle this. The user provided a statement about struggling with adult responsibilities like renting a car, buying a car, booking a flight, and feeling resistance and frustrati..."
+        }
+      ],
+      "average_score": 2.8
+    },
+    "prompt-semantic-only.md": {
+      "prompt_file": "prompt-semantic-only.md",
+      "model": "qwen3:8b",
+      "test_results": [
+        {
+          "test_case_id": 1,
+          "score": 0.0,
+          "metrics": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "true_positives": 0,
+            "false_positives": 3,
+            "false_negatives": 5,
+            "top_3_correct": 0,
+            "returned_styles": [
+              "FRICTIVE \u2192 STILL",
+              "IDEALIZING \u2192 HUMAN",
+              "SYMBIOTIC \u2192 SOLID"
+            ]
+          },
+          "raw_response": "Thinking...\nOkay, let's tackle this classification. The user's statement is about feeling consumed by another person, giving more than receiving, vulnerability, and a fear that this person is draining..."
+        },
+        {
+          "test_case_id": 2,
+          "score": 0.0,
+          "metrics": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "true_positives": 0,
+            "false_positives": 3,
+            "false_negatives": 7,
+            "top_3_correct": 0,
+            "returned_styles": [
+              "DISCONNECTED \u2192 FLOATY",
+              "FRICTIVE \u2192 STILL",
+              "DEPRIVED \u2192 WOUNDED"
+            ]
+          },
+          "raw_response": "Thinking...\nOkay, let's tackle this statement. The user is talking about starting a new relationship and feeling anxious. They mention being triggered, feeling destabilized, and questioning if the per..."
+        },
+        {
+          "test_case_id": 3,
+          "score": 2.0,
+          "metrics": {
+            "precision": 1.0,
+            "recall": 0.333,
+            "true_positives": 1,
+            "false_positives": 0,
+            "false_negatives": 2,
+            "top_3_correct": 1,
+            "returned_styles": [
+              "FRUSTRATED"
+            ]
+          },
+          "raw_response": "Thinking...\nOkay, let's tackle this statement. The user is talking about their car's paint issue and the process of getting it fixed under warranty. They've been going back and forth with the dealersh..."
+        },
+        {
+          "test_case_id": 4,
+          "score": 0.0,
+          "metrics": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "true_positives": 0,
+            "false_positives": 2,
+            "false_negatives": 5,
+            "top_3_correct": 0,
+            "returned_styles": [
+              "DISCONNECTED \u2192 CONNECTED",
+              "INDULGED \u2192 AWARE"
+            ]
+          },
+          "raw_response": "Thinking...\nOkay, let's tackle this. The user provided a statement about struggling to be present, constantly thinking about the future, problems to solve, and not being in the moment. I need to class..."
+        },
+        {
+          "test_case_id": 5,
+          "score": 6.0,
+          "metrics": {
+            "precision": 1.0,
+            "recall": 0.667,
+            "true_positives": 2,
+            "false_positives": 0,
+            "false_negatives": 1,
+            "top_3_correct": 2,
+            "returned_styles": [
+              "INDULGED",
+              "FRUSTRATED"
+            ]
+          },
+          "raw_response": "Thinking...\nOkay, let's tackle this classification. The user's statement is about struggling with adult responsibilities like renting a car, buying a car, booking a flight, and feeling resistance when..."
+        }
+      ],
+      "average_score": 1.6
+    },
+    "prompt-embodiment-only.md": {
+      "prompt_file": "prompt-embodiment-only.md",
+      "model": "qwen3:8b",
+      "test_results": [
+        {
+          "test_case_id": 1,
+          "score": 0.0,
+          "metrics": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "true_positives": 0,
+            "false_positives": 3,
+            "false_negatives": 5,
+            "top_3_correct": 0,
+            "returned_styles": [
+              "SQUASHED",
+              "IDEALIZING",
+              "FRICTIVE"
+            ]
+          },
+          "raw_response": "Thinking...\nOkay, let's tackle this statement. The user is feeling consumed by another person, giving more than receiving, and feeling vulnerable. They mention a \"big, bad, scary, death\" entity that's..."
+        },
+        {
+          "test_case_id": 2,
+          "score": 2.0,
+          "metrics": {
+            "precision": 0.333,
+            "recall": 0.143,
+            "true_positives": 1,
+            "false_positives": 2,
+            "false_negatives": 6,
+            "top_3_correct": 1,
+            "returned_styles": [
+              "DISCONNECTED",
+              "SYMBIOTIC",
+              "FRUSTRATED"
+            ]
+          },
+          "raw_response": "Thinking...\nOkay, let me try to work through this. The user provided a statement about feeling anxious in a new relationship, feeling needy, and being consumed by these feelings. They mention hiding t..."
+        },
+        {
+          "test_case_id": 3,
+          "score": 6.0,
+          "metrics": {
+            "precision": 0.667,
+            "recall": 0.667,
+            "true_positives": 2,
+            "false_positives": 1,
+            "false_negatives": 1,
+            "top_3_correct": 2,
+            "returned_styles": [
+              "FRUSTRATED",
+              "DISCONNECTED",
+              "PREMATURE"
+            ]
+          },
+          "raw_response": "Thinking...\nOkay, let's tackle this classification. The user provided a statement about their car's paint issue and the dealership's handling of the warranty claim. The task is to analyze this using t..."
+        },
+        {
+          "test_case_id": 4,
+          "score": 0.0,
+          "metrics": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "true_positives": 0,
+            "false_positives": 2,
+            "false_negatives": 5,
+            "top_3_correct": 0,
+            "returned_styles": [
+              "DISCONNECTED",
+              "FRICTIVE"
+            ]
+          },
+          "raw_response": "Thinking...\nOkay, let's tackle this. The user provided a statement about struggling to be present, constantly thinking about the future, problems to solve, and not being in the moment. The task is to ..."
+        },
+        {
+          "test_case_id": 5,
+          "score": 6.0,
+          "metrics": {
+            "precision": 1.0,
+            "recall": 0.667,
+            "true_positives": 2,
+            "false_positives": 0,
+            "false_negatives": 1,
+            "top_3_correct": 2,
+            "returned_styles": [
+              "INDULGED",
+              "FRUSTRATED"
+            ]
+          },
+          "raw_response": "Thinking...\nOkay, let's break this down. The user is talking about having to handle adult responsibilities like renting and buying a car, booking a flight, and feeling resistance when making decisions..."
+        }
+      ],
+      "average_score": 2.8
+    }
+  },
+  "gpt-oss:20b": {
+    "prompt-comprehensive.md": {
+      "prompt_file": "prompt-comprehensive.md",
+      "model": "gpt-oss:20b",
+      "test_results": [
+        {
+          "test_case_id": 1,
+          "score": 2.0,
+          "metrics": {
+            "precision": 0.333,
+            "recall": 0.2,
+            "true_positives": 1,
+            "false_positives": 2,
+            "false_negatives": 4,
+            "top_3_correct": 1,
+            "returned_styles": [
+              "SYMBIOTIC",
+              "FRICTIVE",
+              "CONSTRICTED"
+            ]
+          },
+          "raw_response": "Thinking...\nWe need to analyze the statement and classify into coping styles. The statement expresses:\n\n- Feeling consumed and obsessed by other person's presence.\n- Worry of slipping into old pattern..."
+        },
+        {
+          "test_case_id": 2,
+          "score": 10.0,
+          "metrics": {
+            "precision": 0.8,
+            "recall": 0.571,
+            "true_positives": 4,
+            "false_positives": 1,
+            "false_negatives": 3,
+            "top_3_correct": 3,
+            "returned_styles": [
+              "FRICTIVE",
+              "OMNIPOTENT",
+              "SYMBIOTIC",
+              "DISCONNECTED",
+              "CONSTRICTED"
+            ]
+          },
+          "raw_response": "Thinking...\nWe need to produce JSON classification according to system prompt. The statement is similar to example 2. They want styles with confidence >=0.50. Max 5 classifications. Must order by conf..."
+        },
+        {
+          "test_case_id": 3,
+          "score": 6.0,
+          "metrics": {
+            "precision": 1.0,
+            "recall": 0.667,
+            "true_positives": 2,
+            "false_positives": 0,
+            "false_negatives": 1,
+            "top_3_correct": 2,
+            "returned_styles": [
+              "FRUSTRATED",
+              "DISCONNECTED"
+            ]
+          },
+          "raw_response": "Thinking...\nWe have a statement about a frustrating experience with dealership and warranty claim. Need to classify coping styles. The scenario indicates frustration, being stuck, lack of resolution, ..."
+        },
+        {
+          "test_case_id": 4,
+          "score": 7.0,
+          "metrics": {
+            "precision": 0.8,
+            "recall": 0.8,
+            "true_positives": 4,
+            "false_positives": 1,
+            "false_negatives": 1,
+            "top_3_correct": 2,
+            "returned_styles": [
+              "DISCONNECTED",
+              "PREMATURE",
+              "OMNIPOTENT",
+              "FRUSTRATED",
+              "CONSTRICTED"
+            ]
+          },
+          "raw_response": "Thinking...\nWe need to output JSON classification. We saw Example 4 similar statement. We need to consider style classification. The statement basically describes struggling to be present, ruminating ..."
+        },
+        {
+          "test_case_id": 5,
+          "score": 6.0,
+          "metrics": {
+            "precision": 1.0,
+            "recall": 0.667,
+            "true_positives": 2,
+            "false_positives": 0,
+            "false_negatives": 1,
+            "top_3_correct": 2,
+            "returned_styles": [
+              "INDULGED",
+              "FRUSTRATED"
+            ]
+          },
+          "raw_response": "Thinking...\nWe need to classify this statement. It seems similar to Example 3 but more detail. We'll apply same style. Likely INDULGED, FRUSTRATED, DISCONNECTED. Let's evaluate.\n\nThe statement: \"So I ..."
+        }
+      ],
+      "average_score": 6.2
+    },
+    "prompt-keywords-only.md": {
+      "prompt_file": "prompt-keywords-only.md",
+      "model": "gpt-oss:20b",
+      "test_results": [
+        {
+          "test_case_id": 1,
+          "score": 0.0,
+          "metrics": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "true_positives": 0,
+            "false_positives": 2,
+            "false_negatives": 5,
+            "top_3_correct": 0,
+            "returned_styles": [
+              "SYMBIOTIC",
+              "DISCONNECTED"
+            ]
+          },
+          "raw_response": "Thinking...\nWe need to classify statement according to style patterns. We need to identify style names and confidence.\n\nThe statement: \"I'm feeling all consumed and obsessed by this other person's pre..."
+        },
+        {
+          "test_case_id": 2,
+          "score": 0.0,
+          "metrics": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "true_positives": 0,
+            "false_positives": 1,
+            "false_negatives": 7,
+            "top_3_correct": 0,
+            "returned_styles": [
+              "DISCONNECTED"
+            ]
+          },
+          "raw_response": "Thinking...\nWe need to parse statement. Identify patterns. It's about anxiety, neediness, destabilizing, feeling anxious about relationship, feeling needy, foggy, consumed, robs center. Keywords: anxi..."
+        },
+        {
+          "test_case_id": 3,
+          "score": 2.0,
+          "metrics": {
+            "precision": 1.0,
+            "recall": 0.333,
+            "true_positives": 1,
+            "false_positives": 0,
+            "false_negatives": 2,
+            "top_3_correct": 1,
+            "returned_styles": [
+              "FRUSTRATED"
+            ]
+          },
+          "raw_response": "Thinking...\nWe need to classify statement into style patterns described. Statement: frustration with dealership, awaiting warranty claim, repeated delays. Might match FRUSTRATED \u2192 In Flow? Or DISCONNE..."
+        },
+        {
+          "test_case_id": 4,
+          "score": 0.0,
+          "metrics": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "true_positives": 0,
+            "false_positives": 1,
+            "false_negatives": 5,
+            "top_3_correct": 0,
+            "returned_styles": [
+              "DISCONNECTED"
+            ]
+          },
+          "raw_response": "Thinking...\nWe need to analyze the statement. Let's restate: The person is \"really struggling to be present\", thinking about future problems, focusing on future tasks, others' problems, wanting to hel..."
+        },
+        {
+          "test_case_id": 5,
+          "score": 6.0,
+          "metrics": {
+            "precision": 1.0,
+            "recall": 0.667,
+            "true_positives": 2,
+            "false_positives": 0,
+            "false_negatives": 1,
+            "top_3_correct": 2,
+            "returned_styles": [
+              "INDULGED",
+              "FRUSTRATED"
+            ]
+          },
+          "raw_response": "Thinking...\nWe need to classify statement using keyword clusters. The statement: \"So I have to really adult right now... rent a car, buy a car, book flight... it feels too adulty, I get frustrated, re..."
+        }
+      ],
+      "average_score": 1.6
+    },
+    "prompt-semantic-only.md": {
+      "prompt_file": "prompt-semantic-only.md",
+      "model": "gpt-oss:20b",
+      "test_results": [
+        {
+          "test_case_id": 1,
+          "score": 0.0,
+          "metrics": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "true_positives": 0,
+            "false_positives": 2,
+            "false_negatives": 5,
+            "top_3_correct": 0,
+            "returned_styles": [
+              "SYMBIOTIC",
+              "DEPRIVED"
+            ]
+          },
+          "raw_response": "Thinking...\nWe need to classify into one or more coping styles. The statement: feeling consumed and obsessed by other person's presence, worry about slipping into patterns of giving more than receivin..."
+        },
+        {
+          "test_case_id": 2,
+          "score": 0.0,
+          "metrics": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "true_positives": 0,
+            "false_positives": 1,
+            "false_negatives": 7,
+            "top_3_correct": 0,
+            "returned_styles": [
+              "DISCONNECTED \u2192 FLOATY"
+            ]
+          },
+          "raw_response": "Thinking...\nWe need to classify the statement with style. Statement: \"Um, so I just started dating this person, and it's like, triggered me, because I'm feel so anxious about, like, what's going to ha..."
+        },
+        {
+          "test_case_id": 3,
+          "score": 2.0,
+          "metrics": {
+            "precision": 1.0,
+            "recall": 0.333,
+            "true_positives": 1,
+            "false_positives": 0,
+            "false_negatives": 2,
+            "top_3_correct": 1,
+            "returned_styles": [
+              "FRUSTRATED"
+            ]
+          },
+          "raw_response": "Thinking...\nWe need to classify the statement into coping styles. The statement: person dealing with car paint bubbling, deals with dealership, waiting, feeling not helped, frustration. Likely \"FRUSTR..."
+        },
+        {
+          "test_case_id": 4,
+          "score": 0.0,
+          "metrics": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "true_positives": 0,
+            "false_positives": 1,
+            "false_negatives": 5,
+            "top_3_correct": 0,
+            "returned_styles": [
+              "DISCONNECTED"
+            ]
+          },
+          "raw_response": "Thinking...\nWe need to classify the style. The statement: \"Struggling to be present. I think about future, problems to take care, other people's problems I want to help them with my own challenges, et..."
+        },
+        {
+          "test_case_id": 5,
+          "score": 2.0,
+          "metrics": {
+            "precision": 1.0,
+            "recall": 0.333,
+            "true_positives": 1,
+            "false_positives": 0,
+            "false_negatives": 2,
+            "top_3_correct": 1,
+            "returned_styles": [
+              "INDULGED"
+            ]
+          },
+          "raw_response": "Thinking...\nWe need to classify this statement. The person describes adult responsibilities, difficulty with decisions, feeling resistance, avoiding, feeling it is too adulty, frustrated. This strongl..."
+        }
+      ],
+      "average_score": 0.8
+    },
+    "prompt-embodiment-only.md": {
+      "prompt_file": "prompt-embodiment-only.md",
+      "model": "gpt-oss:20b",
+      "test_results": [
+        {
+          "test_case_id": 1,
+          "score": 0.0,
+          "metrics": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "true_positives": 0,
+            "false_positives": 1,
+            "false_negatives": 5,
+            "top_3_correct": 0,
+            "returned_styles": [
+              "SYMBIOTIC"
+            ]
+          },
+          "raw_response": "Thinking...\nWe need to classify the statement into one of the 12 coping styles, possibly with subtype. The statement: \"I'm feeling all consumed and obsessed by this other person's presence. I'm worrie..."
+        },
+        {
+          "test_case_id": 2,
+          "score": 2.0,
+          "metrics": {
+            "precision": 1.0,
+            "recall": 0.143,
+            "true_positives": 1,
+            "false_positives": 0,
+            "false_negatives": 6,
+            "top_3_correct": 1,
+            "returned_styles": [
+              "FRICTIVE"
+            ]
+          },
+          "raw_response": "Thinking...\nWe need to classify statement into one of the 12 coping styles: DISCONNECTED, FRICTIVE, OMNIPOTENT, DEPRIVED, SYMBIOTIC, PREMATURE, IDEALIZING, FRUSTRATED, INDULGED, SQUASHED, PROVOCATIVE,..."
+        },
+        {
+          "test_case_id": 3,
+          "score": 2.0,
+          "metrics": {
+            "precision": 1.0,
+            "recall": 0.333,
+            "true_positives": 1,
+            "false_positives": 0,
+            "false_negatives": 2,
+            "top_3_correct": 1,
+            "returned_styles": [
+              "FRUSTRATED"
+            ]
+          },
+          "raw_response": "Thinking...\nWe need to interpret statement: frustrated with car warranty claim, repeated interactions, not resolved, feeling ignored. Which style fits? There's frustration, feeling of powerlessness, r..."
+        },
+        {
+          "test_case_id": 4,
+          "score": 0.0,
+          "metrics": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "true_positives": 0,
+            "false_positives": 1,
+            "false_negatives": 5,
+            "top_3_correct": 0,
+            "returned_styles": [
+              "FRICTIVE"
+            ]
+          },
+          "raw_response": "Thinking...\nWe need to analyze the statement: Person is struggling to be present, constantly thinking about future problems, wanting to help others, ruminating, focusing on solutions for future rather..."
+        },
+        {
+          "test_case_id": 5,
+          "score": 2.0,
+          "metrics": {
+            "precision": 1.0,
+            "recall": 0.333,
+            "true_positives": 1,
+            "false_positives": 0,
+            "false_negatives": 2,
+            "top_3_correct": 1,
+            "returned_styles": [
+              "INDULGED"
+            ]
+          },
+          "raw_response": "Thinking...\nWe need to classify this statement. The user experiences adulting tasks, feels resistance, avoidance, frustration, sees adult responsibilities as overwhelming. This aligns with the INDULGE..."
+        }
+      ],
+      "average_score": 1.2
+    }
+  }
+}

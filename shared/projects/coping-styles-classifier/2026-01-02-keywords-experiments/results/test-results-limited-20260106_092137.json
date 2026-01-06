@@ -1,0 +1,138 @@
+{
+  "prompt_file": "prompt-only-unique-keywords-5-styles-diconnected-to-symbiotic.md",
+  "timestamp": "2026-01-06T09:20:34.509299",
+  "models": {
+    "qwen3-coder:30b-a3b-q8_0": {
+      "scores": [
+        6.0,
+        3.8461538461538463,
+        0,
+        0,
+        6.666666666666666
+      ],
+      "details": [
+        {
+          "test_id": 1,
+          "full_diagnosis": [
+            "OMNIPOTENT",
+            "FRUSTRATED",
+            "PREMATURE",
+            "CONSTRICTED",
+            "FLOATY"
+          ],
+          "available_diagnosis": [
+            "OMNIPOTENT",
+            "FLOATY"
+          ],
+          "predicted": [
+            "OMNIPOTENT",
+            "FRICTIVE",
+            "SYMBIOTIC"
+          ],
+          "score": 6.0,
+          "response": "```json\n{\n  \"statement\": \"I'm feeling all consumed and obsessed by this other person's presence. I'm worried that I'm slipping into like old patterns of giving way more than I'm actually receiving. And I feel really vulnerable. I feel like, like I can't even focus on anything else. And I'm like, scared for my little heart, like, I want to guard my little heart, because it's like, this outside entity is just like, please is, like, this big. Big, bad, scary, death, like sucking my life force energ"
+        },
+        {
+          "test_id": 2,
+          "full_diagnosis": [
+            "OMNIPOTENT",
+            "SYMBIOTIC",
+            "FRICTIVE",
+            "DEPRIVED",
+            "FLOATY",
+            "FLIGHTY",
+            "CONSTRICTED"
+          ],
+          "available_diagnosis": [
+            "OMNIPOTENT",
+            "SYMBIOTIC",
+            "FRICTIVE",
+            "DEPRIVED",
+            "FLOATY",
+            "FLIGHTY"
+          ],
+          "predicted": [
+            "FRICTIVE",
+            "OMNIPOTENT"
+          ],
+          "score": 3.8461538461538463,
+          "response": "```json\n{\n  \"statement\": \"Um, so I just started dating this person, and it's like, triggered me, because I'm feel so anxious about, like, what's going to happen? Does he like me? It's really, like, destabilizing, and I don't like seeing that old behavior in me activated. I feel like, really needy and like Bucha. Trying to hide the fact that I'm needy and so uncomfortable in my body, and like, foggy, and like, just Yeah, consumed by it, and like, I'm thinking about it all the time, and like it's "
+        },
+        {
+          "test_id": 3,
+          "full_diagnosis": [
+            "DISCONNECTED",
+            "FRUSTRATED",
+            "SACRIFICING"
+          ],
+          "available_diagnosis": [
+            "DISCONNECTED"
+          ],
+          "predicted": [
+            "DEPRIVED",
+            "FRICTIVE",
+            "SYMBIOTIC",
+            "OMNIPOTENT"
+          ],
+          "score": 0,
+          "response": "```json\n{\n  \"statement\": \"Okay, so back in August, I noticed that there was bubbling paint on my car in several different places, so I looked it up online for that model of car, and it said that it's an issue with that car. So I went to the dealership and I went. I took the car to the dealership where I bought it, and I showed them the paint, and they said that, yes, it is a problem, but that they don't fix it there, but they could file a claim with Jeep for me, since the car was still under war"
+        },
+        {
+          "test_id": 4,
+          "full_diagnosis": [
+            "FRUSTRATED",
+            "FLOATY",
+            "CONSTRICTED",
+            "PREMATURE",
+            "OMNIPOTENT"
+          ],
+          "available_diagnosis": [
+            "FLOATY",
+            "OMNIPOTENT"
+          ],
+          "predicted": [
+            "FRICTIVE"
+          ],
+          "score": 0,
+          "response": "```json\n{\n  \"statement\": \"So I'm really struggling to be present. Currently, I find myself thinking about all of these things happening in the future and all these problems that I want to take care of, and all these things that I want to..I find myself being in the future a lot and focusing a lot on things that are coming up, focusing on other people's problems that I want to help them with my own challenges that I want to resolve instead of actually taking care of it in the moment, I'm just rum"
+        },
+        {
+          "test_id": 5,
+          "full_diagnosis": [
+            "INDULGED",
+            "FRUSTRATED",
+            "DISCONNECTED"
+          ],
+          "available_diagnosis": [
+            "DISCONNECTED"
+          ],
+          "predicted": [
+            "FRICTIVE",
+            "DISCONNECTED"
+          ],
+          "score": 6.666666666666666,
+          "response": "```json\n{\n  \"statement\": \"So I have to really adult right now in my life. I have to rent a car, buy a car, and I have to book a flight, and the airport I want to book from isn't having flights when I need the flight, so I'm gonna have to go to another airport and, like, all these kind of technical need to sit down. Like, plan adult, be responsible. Choose. So, yeah, there's things I need to do that are adulting. I need to rent a car. I need to buy a car, mostly. And every time I need to really d"
+        }
+      ],
+      "average_score": 3.3025641025641024
+    }
+  },
+  "available_styles": [
+    "SYMBIOTIC",
+    "WOUNDED",
+    "FRICTIVE",
+    "MASKED",
+    "STIFF",
+    "FLIGHTY",
+    "FLOATY",
+    "INDISPENSABLE",
+    "ELUSIVE",
+    "STOCKPILING",
+    "DISCONNECTED",
+    "PURSUING",
+    "DEPRIVED",
+    "SCAVENGING",
+    "OMNIPOTENT",
+    "CHARMING"
+  ]
+}
